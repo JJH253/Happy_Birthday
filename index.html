@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Surprise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- FLOATING BACKGROUND -->
+<div class="floating-items">
+  <span>💖</span>
+  <span>🌸</span>
+  <span>✨</span>
+  <span>🦋</span>
+  <span>⭐</span>
+</div>
+
+<!-- ================= COUNTDOWN ================= -->
+<div id="countdownPage" class="page active">
+  <h1>Wait for it... 👀</h1>
+  <h2 id="count">5</h2>
+  <p>Preparing your surprise 🎁</p>
+</div>
+
+<!-- ================= REVEAL ================= -->
+<div id="revealPage" class="page">
+  <h1>It’s your 19th birthday 🎉</h1>
+  <p>Hope your day is full of smiles 😊</p>
+  <p class="tap-text">Tap to continue 👆</p>
+  <button onclick="showPage('home')">Continue</button>
+</div>
+
+<!-- ================= HOME ================= -->
+<div id="home" class="page">
+  <h1>A Small Surprise for You 😊</h1>
+  <p>I made something for you… hope you like it</p>
+  <button onclick="showPage('lettersPage')">Open 👀</button>
+</div>
+
+<!-- ================= MENU ================= -->
+<div id="lettersPage" class="page">
+  <h1>Choose a Section</h1>
+
+  <div class="letters">
+    <div class="letter-card" onclick="openLetter('letter1')">💌 Photo</div>
+    <div class="letter-card" onclick="openLetter('letter2')">🌸 Why You’re Awesome</div>
+    <div class="letter-card" onclick="openLetter('letter3')">🎥 Videos</div>
+    <div class="letter-card" onclick="openLetter('letter4')">🎂 Cake</div>
+  </div>
+
+  <button onclick="showPage('home')">Back</button>
+</div>
+
+<!-- ================= Photo ================= -->
+<div id="letter1" class="page">
+  <h1>😊</h1>
+
+  <img src="photo.jpg" class="main-photo" alt="Photo">
+
+  <p>🌸</p>
+
+  <button onclick="showPage('lettersPage')">Back</button>
+</div>
+
+<!-- ================= WHY AWESOME ================= -->
+<div id="letter2" class="page">
+  <h1>Why You’re Awesome 😄</h1>
+
+  <div class="flowers">
+    <p>😊 Easy to talk to</p>
+    <p>😂 Fun to be around</p>
+    <p>🎯 Focused on your goals</p>
+    <p>💪 Strong personality</p>
+    <p>✨ Always positive</p>
+  </div>
+
+  <button onclick="showPage('lettersPage')">Back</button>
+</div>
+
+<!-- ================= VIDEOS ================= -->
+<div id="letter3" class="page">
+  <h1>Some Videos 🎥</h1>
+
+  <video controls>
+    <source src="video1.mp4" type="video/mp4">
+  </video>
+  <p>When Music Speaks</p>
+
+  <video controls>
+    <source src="video2.mp4" type="video/mp4">
+  </video>
+  <p>When Tune Hits</p>
+
+  <video controls>
+    <source src="video3.mp4" type="video/mp4">
+  </video>
+  <p>Another good moment ✨</p>
+
+  <button onclick="showPage('lettersPage')">Back</button>
+</div>
+
+<!-- ================= CAKE ================= -->
+<div id="letter4" class="page">
+
+  <div id="beforeBlow">
+    <h1>Your Cake 🎂</h1>
+    <p>Make a wish 😄</p>
+
+    <img src="cake.png" class="cake-image" alt="Cake">
+
+    <button onclick="blowCandle()">Blow Candle 🎉</button>
+  </div>
+
+  <div id="afterBlow" class="hidden">
+    <h1>Happy Birthday 🎉</h1>
+    <p>Hope you have an amazing year ahead 😊</p>
+    <button onclick="showPage('lettersPage')">Back</button>
+  </div>
+
+</div>
+
+<!-- ================= AUDIO ================= -->
+<audio id="clickSound" src="click.mp3"></audio>
+<audio id="openSound" src="open.mp3"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
